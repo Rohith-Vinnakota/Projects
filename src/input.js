@@ -2,13 +2,17 @@ var fooditems = document.getElementById("ul");
 var serach = document.getElementById("searchId");
 var fooditemscontent = document.getElementById("fooditems");
 
+
+
+// default 10 food items loads function 
 let url1 = 'https://www.themealdb.com/api/json/v1/1/search.php?s=b';
-var dataJson =[];
+var dataJson = [];
+
 async function getData() {
     const res = await fetch(url1);
     const data = await res.json();
     let content = data.meals;
-    content=content.slice(0, 12);
+    content = content.slice(0, 12);
     fooditems.style.display = 'grid';
 
     content.map((each) => {
@@ -31,6 +35,7 @@ async function getData() {
 
 }
 getData();
+// loads a food according to the food name print only 10 items
 async function retreiveData() {
     let content;
     let url = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + serach.value;
@@ -65,6 +70,8 @@ async function retreiveData() {
     }
 
 }
+
+//  customer select the food item that item show in cart 
 function addcart1() {
     let cartItems = document.getElementById('cartitems');
     cartItems.classList.toggle('cartitems1');
