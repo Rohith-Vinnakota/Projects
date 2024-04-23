@@ -35,7 +35,7 @@ async function getData() {
 
 }
 getData();
-// loads a food according to the food name print only 10 items
+// loads a food according to the food name print only 10 food items
 async function retreiveData() {
     let content;
     let url = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + serach.value;
@@ -71,7 +71,7 @@ async function retreiveData() {
 
 }
 
-//  customer select the food item that item show in cart 
+//  customer select the food item that item show in cart page  
 function addcart1() {
     let cartItems = document.getElementById('cartitems');
     cartItems.classList.toggle('cartitems1');
